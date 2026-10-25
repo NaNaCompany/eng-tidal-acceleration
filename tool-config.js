@@ -1,0 +1,60 @@
+export const tool={
+  "id": "E103",
+  "slug": "eng-tidal-acceleration",
+  "title": "조석 차등가속도 계산기",
+  "title_en": "Tidal Differential Acceleration Calculator",
+  "category": "우주·천체",
+  "category_en": "Space and astronomy",
+  "fields": [
+    {
+      "key": "mass",
+      "label": "중심 천체 질량 M",
+      "label_en": "Central body mass M",
+      "dimension": "mass",
+      "example": 5.9722e+24,
+      "constraint": "positive",
+      "display_unit": "kg",
+      "display_value": "5.9722000000000002e+24"
+    },
+    {
+      "key": "near",
+      "label": "가까운 끝의 중심거리 r₁",
+      "label_en": "Near endpoint center distance r₁",
+      "dimension": "length",
+      "example": 6371000,
+      "constraint": "positive",
+      "display_unit": "km",
+      "display_value": "6371"
+    },
+    {
+      "key": "far",
+      "label": "먼 끝의 중심거리 r₂",
+      "label_en": "Far endpoint center distance r₂",
+      "dimension": "length",
+      "example": 6371002,
+      "constraint": "positive",
+      "display_unit": "km",
+      "display_value": "6371.0020000000004"
+    }
+  ],
+  "result_label": "양 끝의 중력가속도 차 Δg",
+  "result_label_en": "Endpoint gravity difference Δg",
+  "result_dimension": "acceleration",
+  "formula": "Δg = GM(1/r₁² − 1/r₂²)",
+  "purpose": "같은 반지름 방향에 놓인 두 점이 받는 뉴턴 중력가속도의 크기 차를 계산한다.",
+  "purpose_en": "Calculate the difference in Newtonian gravitational acceleration magnitudes at two radially aligned points.",
+  "assumptions": "M>0, r₂≥r₁>0. 두 점은 천체의 같은 쪽 반지름 방향이며 모두 구대칭 천체 바깥에 있어야 한다. 중심거리를 입력한다. 앱은 약한장 근사 범위를 r_s/r₁≤0.01로 제한한다. 차등가속도이며 힘·응력·삼차원 조석 텐서는 아니다. 자전·다른 천체·물체 내부 응답을 제외한다.",
+  "assumptions_en": "Required: M>0 and r₂≥r₁>0, with both points on the same outward radial ray and outside a spherical body. Inputs are center distances. This app restricts weak-field use to r_s/r₁≤0.01. The output is a differential acceleration, not force, stress or a three-dimensional tidal tensor. Excluded: rotation, other bodies and structural response.",
+  "sources": [
+    {
+      "label": "OpenStax · Newton’s Universal Law of Gravitation",
+      "url": "https://openstax.org/books/college-physics-ap-courses-2e/pages/6-5-newtons-universal-law-of-gravitation"
+    }
+  ],
+  "condition": "두 점이 같은 쪽 반지름 방향이며 모두 구대칭 천체 외부에 있음을 확인했습니다.",
+  "condition_en": "I confirm both points lie on the same outward radial ray outside a spherical body.",
+  "site": "https://nanalab.kr/eng-tidal-acceleration/",
+  "repository": "https://github.com/NaNaCompany/eng-tidal-acceleration",
+  "groups": [],
+  "output_unit": "ms2"
+};

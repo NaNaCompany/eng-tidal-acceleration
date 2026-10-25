@@ -1,0 +1,49 @@
+{
+  "id": "E103",
+  "value": 6.165624027102422e-06,
+  "method": "Independent Python Decimal, precision 80 decimal digits; direct analytic SI equation with binary64 inputs decoded exactly, no JavaScript model imports.",
+  "value_80_digits": "0.0000061656240271024222103193518362607223903505238974764339913933642272109091916232273",
+  "cases": [
+    {
+      "name": "Equal endpoints have zero difference",
+      "values": {
+        "near": 10000000,
+        "far": 10000000
+      },
+      "expected": 0.0
+    },
+    {
+      "name": "Analytic inverse-square ratio",
+      "values": {
+        "mass": 10000000000.0,
+        "near": 1,
+        "far": 2
+      },
+      "expected": 0.5005725
+    },
+    {
+      "name": "Earth endpoint separation one millimetre",
+      "values": {
+        "far": 6371000.001
+      },
+      "expected": 3.0828139697838694e-09
+    },
+    {
+      "name": "Reversed endpoints rejected",
+      "values": {
+        "near": 2,
+        "far": 1
+      },
+      "throws": true
+    },
+    {
+      "name": "Strong-field Newtonian extrapolation rejected",
+      "values": {
+        "mass": 1e+30,
+        "near": 1000,
+        "far": 2000
+      },
+      "throws": true
+    }
+  ]
+}
